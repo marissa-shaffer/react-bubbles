@@ -24,6 +24,14 @@ const BubblePage = () => {
     });
   };
 
+  useEffect(() => {
+    fetchColor(match.params.id);
+  }, [match.params.id]);
+
+  if (!colorList) {
+    return <div>Loading Bubbles</div>;
+  }
+
   return (
     <>
       <ColorList colors={colorList} updateColors={setColorList} />
