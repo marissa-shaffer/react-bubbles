@@ -23,7 +23,7 @@ const ColorList = ({ colors, updateColors }) => {
     // think about where will you get the id from...
     // where is is saved right now?
     axiosWithAuth()
-    .put(`/colors/${colorToEdit.id}`, colorEdit)
+    .put(`/colors/${colorToEdit.id}`, colorToEdit)
     .then(res => {
       console.log(res);
       colors = colors.filter(color => color.id !== colorToEdit.id)
